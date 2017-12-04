@@ -1,0 +1,45 @@
+<h1>
+  {{title}}
+</h1>
+
+<a routerLink = "/sinhvien">sinhvien</a>
+<br>
+<a routerLink = "/product">product</a>
+<br>
+<router-outlet></router-outlet>
+<br>
+xuat ten trong doi tuong :  {{obj.name}}
+<br>
+<h2>{{myName | uppercase}}</h2>
+<h2>{{day}}</h2>
+<h2>{{day | date}}</h2>
+<h2>{{day | date:'shortDate' }}</h2>
+<h2>{{day | date :'fullDate'}}</h2>
+Xuat danh sach trong mang :
+<ul>
+  <li *ngFor = "let i of arr">{{i}}</li>
+</ul>
+sap xep mang:
+{{arr_number | sort: 'ascending'}}
+<br>
+{{arr | sort : 'ascending'}}
+<br>
+su dung ham if else trong angular:
+<p *ngIf = "istrue; then firsttemp else secondtemp"> Hello </p> 
+<ng-template #firsttemp> This is first template</ng-template>
+<ng-template #secondtemp> This is second template</ng-template>
+<p *ngIf = "myName == 'Minh Luan'"> dung roi </p>
+<h3>Ham them trong Angular:</h3>
+<div class="main">
+  <h2>Item's List</h2>
+  <div class="addItem">
+    <input [(ngModel)] = "newitems" placeholder="Add Item" class="addText">
+    <button (click) = "pushitems()">Add</button>
+  </div>
+  <ul>
+    <li *ngFor = "let i of items; let ind = index">
+        {{i}}
+      <span (click)="removeitems(ind)">x</span>
+    </li>
+  </ul>
+</div>
